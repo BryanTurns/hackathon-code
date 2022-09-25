@@ -37,7 +37,7 @@ MongoClient.connect(url, function (err, db) {
       if (err) {
         throw err;
       } else {
-        console.log(result);
+        //cnsole.log(result);
         completeDB = result;
       }
       db.close();
@@ -78,7 +78,7 @@ MongoClient.connect(url, function (err, db) {
       if (err) {
         throw err;
       } else {
-        console.log(result);
+        //console.log(result);
         const data = result;
 
         router.get("/getData", (request, response) => {
@@ -94,6 +94,10 @@ MongoClient.connect(url, function (err, db) {
       db.close();
     });
 });
+
+
+  
+         
 /* app.get('/getData', (request, response)=>{
     //console.log('working')
     MongoClient.connect(url, function (err, db) {
@@ -114,7 +118,7 @@ MongoClient.connect(url, function (err, db) {
     })
  }) */
 
-//add nft to user
+//add nft to user and send to My account
 function addNFT(concert) {
   //console.log("concert")
   //console.log(concert)
@@ -127,8 +131,30 @@ function addNFT(concert) {
       .updateOne(
         { userName: concert.userName },
         { $set: { nft: { concert } } }
-      );
-  });
+      );})
+    console.log(concert)
+    router.get("/getConcerts", (request, response) => {
+        
+        response.json(concert)});
+    /* MongoClient.connect(url, function (err, db) {
+        if(err) throw err
+        var dbo = db.db("tickets")
+        dbo.collection('Blockchain').find({}).toArray(function(err, result){
+            if(err){
+                throw err
+            }else{
+            //console.log(result)
+            const data = result;
+            console.log(data)
+            router.get("/getConcerts", (request, response) => {
+          response.json(data);
+        });
+
+        }
+        db.close()
+    })}) */
 }
+      
+
 
 module.exports = router;
