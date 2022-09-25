@@ -8,7 +8,7 @@ const Home = () => {
         <h1 className="text-8xl text-gray-100  text-center p-10 font-medium absolute bottom-20">
           A more secure way to ticket
         </h1>
-        <img src="/images/blockchain.jpg" className="h-screen"></img>
+        <img src="/images/blockchain.jpg" className="h-full w-full"></img>
       </div>
     </div>
   );
