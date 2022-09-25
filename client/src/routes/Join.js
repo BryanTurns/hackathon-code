@@ -1,52 +1,59 @@
-import React, { useState } from "react"
-const Join=()=>{
+import React, { useState } from "react";
+const Join = () => {
+  const [formData, setFormData] = useState({
+    userName: "",
+    password: "",
+  });
+  console.log(formData);
 
-    const [formData,setFormData] = useState({
-        userName: "",
-        password: "",
+  function handleEvent(event) {
+    const { name, value } = event.target;
 
-    })
-    console.log(formData)
+    setFormData(() => ({
+      ...formData,
+      [name]: value,
+    }));
+  }
 
-    function handleEvent(event){
-        
-        const { name, value }= event.target
-        
-        setFormData(() => ({
-            ...formData,
-            [name]: value
-        }))
-        
-        
-    }
-
-    return(
-        <div>
-            <form>
-                <label>Username 
-                <input
-                    className='inputs'             
-                    onChange={handleEvent}
-                    name="userName"
-                    id="userName"
-                    value={formData.userName}
-                ></input></label>
-                <br/>
-                <label>Password: 
-                <input
-                    type="password"
-                    className='inputs'             
-                    onChange={handleEvent}
-                    name="password"
-                    id="password"
-                    value={formData.password}
-                ></input></label>
-                <br/>
-                <button type="submit">Submit</button>
-            </form>
-
+  return (
+    <div className="bg-[#46464D]">
+      <form className="mx-auto w-min text-3xl h-screen  w-8/12 text-center">
+        <h1 className="text-6xl font-md py-10">Join NFTickets</h1>
+        <div className="py-3 inline-block px-10">
+          <label className="mx-auto block pb-2">Username</label>
+          <input
+            className="inputs block mx-auto"
+            onChange={handleEvent}
+            name="userName"
+            id="userName"
+            value={formData.userName}
+          ></input>
         </div>
-    )
-}
 
-export default Join
+        <div className="py-3 inline-block px-10">
+          <label className="mx-auto block pb-2">Password:</label>
+
+          <input
+            type="password"
+            className="inputs block mx-auto "
+            onChange={handleEvent}
+            name="password"
+            id="password"
+            value={formData.password}
+          ></input>
+        </div>
+        <br />
+        <div className="">
+          <button
+            className="mx-auto my-10 text-3xl border-solid rounded-2xl border-2 p-2 border-gray-500 hover:text-black hover:bg-gray-300 transition ease-out duration-300"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default Join;
