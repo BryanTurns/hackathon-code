@@ -1,4 +1,6 @@
+import React, { useEffect } from 'react'
 const Home = () => {
+ 
   return (
     <div>
       <div className="h-screen bg-[#09002F] text-white">
