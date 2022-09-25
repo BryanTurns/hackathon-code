@@ -48,6 +48,9 @@ app.use(express.json());
 
 const userRouter = require("./routes/users");
 app.use("/api/users", userRouter);
+
+const ticketRouter = require("./routes/tickets");
+app.use("/api/tickets", ticketRouter);
  
 app.get("/", (req, res) => {
   res.send("Hello World!");

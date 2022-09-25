@@ -44,14 +44,7 @@ sendToDB(req.body)
 
 
 })  
-router.post('/purchase', (req,res) => {
-  console.log('on backend')
-console.log(req.body)
-res.status(200).send({status:'recieved'})
 
-
-
-})  
 
 
 //sends customer frontend data to DB
