@@ -41,10 +41,6 @@ const Join = () => {
                 body: JSON.stringify(formData)
             }).then(console.log('done')) */
         }
-        
-        
-        
-    
 
   return (
     <div className="bg-[#46464D]">
