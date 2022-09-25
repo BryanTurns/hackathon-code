@@ -113,7 +113,7 @@ const Join = () => {
         <br />
         <div className="">
           <button
-            className="mx-auto my-10 text-3xl border-solid rounded-2xl border-2 p-2 border-gray-500 hover:text-black hover:bg-gray-300 transition ease-out duration-300"
+            className="mx-auto my-10 text-3xl border-solid rounded-2xl border-2 p-2 border-gray-500 hover:text-black hover:bg-gray-300 transition ease-out duration-300 active:text-blue-200"
             type="submit"
           >
             Submit
