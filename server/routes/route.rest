@@ -1,0 +1,12 @@
+GET http://localhost:9000/api/users
+###
+GET http://localhost:9000/api/users/4
+
+###
+POST http://localhost:9000/api/users
+Content-Type: application/json
+
+{
+    "username": "Amazing Person",
+    "password": "1234"
+}
