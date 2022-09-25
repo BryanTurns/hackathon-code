@@ -6,41 +6,37 @@ const Join = () => {
   });
   console.log(formData);
 
-    })
-    console.log(formData)
+  console.log(formData);
 
-    function handleEvent(event){
-        
-        const { name, value }= event.target
-        
-        setFormData(() => ({
-            ...formData,
-            [name]: value
-         }))
-    }
+  function handleEvent(event) {
+    const { name, value } = event.target;
 
-        async function postInfoToBack(e){
-            console.log("posted to back")
-            console.log(formData)
-            e.preventDefault()
+    setFormData(() => ({
+      ...formData,
+      [name]: value,
+    }));
+  }
 
-             const res = await fetch("http://localhost:9000/api/users",
-            {
-                method: 'POST',
-                headers: {
-                    "Content-Type": 'application/json'
-                },
-                body: JSON.stringify(formData)
-            }) 
-            
+  async function postInfoToBack(e) {
+    console.log("posted to back");
+    console.log(formData);
+    e.preventDefault();
 
-             /* fetch("http://localhost:9000/sendToBack",
+    const res = await fetch("http://localhost:9000/api/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    /* fetch("http://localhost:9000/sendToBack",
             {
                 method: 'POST',
                 headers: { "Content-Type":'application/json'},
                 body: JSON.stringify(formData)
             }).then(console.log('done')) */
-        }
+  }
 
   return (
     <div className="bg-[#46464D]">
