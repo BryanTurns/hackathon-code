@@ -1,6 +1,7 @@
 GET http://localhost:9000/api/users
 ###
-GET http://localhost:9000/api/users/4
+
+GET http://localhost:9000/api/users/632fcad67d87ef6a5b5ec73c
 
 ###
 POST http://localhost:9000/api/users
