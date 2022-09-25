@@ -9,9 +9,6 @@ const userScehma = new mongoose.Schema({
     type: String,
     required: true,
   },
-  _id: {
-    type: mongoose.Schema.Types.ObjectId,
-  },
   hedera_id: {
     type: String,
     required: true,
