@@ -2,9 +2,9 @@ const Home = () => {
   return (
     <div>
       <div className="h-screen bg-[#09002F] text-white">
-        <p className="bg-gradient-to-r from-black h-screen w-full inline-block absolute top-30 opacity-20"></p>
-        <p className="bg-gradient-to-l from-black h-screen w-full inline-block absolute top-30 opacity-20"></p>
-        <h1 className="text-8xl text-black  text-center p-10 font-medium absolute bottom-20">
+        <p className="bg-gradient-to-r from-black h-screen w-full inline-block absolute top-30 opacity-40"></p>
+        <p className="bg-gradient-to-l from-black h-screen w-full inline-block absolute top-30 opacity-40"></p>
+        <h1 className="text-8xl text-gray-100  text-center p-10 font-medium absolute bottom-20">
           A more secure way to ticket
         </h1>
         <img src="/images/blockchain.jpg" className="w-full"></img>

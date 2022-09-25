@@ -38,6 +38,9 @@ function App() {
         </nav>
         <Outlet />
       </div>
+      <footer>
+        <p className="bg-[#7B7B7B] h-48 w-screen">hello</p>
+      </footer>
     </div>
   );
 }
