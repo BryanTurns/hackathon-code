@@ -9,6 +9,7 @@ import Join from "./routes/Join";
 import Buy from "./routes/Buy";
 import Sell from "./routes/Sell";
 import About from "./routes/About";
+import Account from "./routes/Account";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +22,7 @@ root.render(
           <Route path="/buy" element={<Buy />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/about" element={<About />} />
+          <Route path="/account" element={<Account />} />
         </Route>
       </Routes>
     </BrowserRouter>

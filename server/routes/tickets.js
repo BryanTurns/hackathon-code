@@ -15,10 +15,6 @@ app.use(
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-router.post("/concert", (req, res) => {
-  req.body.json();
-});
-
 //get data from customer Frontend -> backend
 router.post("/", (req, res) => {
   console.log("on ticket backend");

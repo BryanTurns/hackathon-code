@@ -41,6 +41,12 @@ function App() {
           >
             About
           </Link>
+          <Link
+            to="/account"
+            className="h-full inline-block pt-5 px-10 hover:bg-gray-600 transition ease-out duration-250"
+          >
+            Account
+          </Link>
         </nav>
         <Outlet />
       </div>
