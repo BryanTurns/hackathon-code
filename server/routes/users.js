@@ -32,16 +32,15 @@ router.post("/", (req, res) => {
     nfts: [],
   });
 
-  const test = async () => {
+  const createUser = async () => {
     try {
       const newUser = await user.save();
-
       res.status(201).json(newUser);
     } catch (err) {
       res.status(400).json({ message: err.message });
     }
   };
-  test();
+  createUser();
 });
 
 // Edit one
