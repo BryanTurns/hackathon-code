@@ -3,6 +3,14 @@ const router = express.Router();
 const app = express();
 const User = require("../models/users");
 const {MongoClient} = require('mongodb')
+const cors = require('cors')
+
+app.use(
+  cors({
+      origin: "*",
+  })
+)
+
 
 url = "mongodb+srv://arhum:arhum@cluster0.zl5usra.mongodb.net/?retryWrites=true&w=majority"
 
@@ -36,6 +44,14 @@ sendToDB(req.body)
 
 
 })  
+router.post('/purchase', (req,res) => {
+  console.log('on backend')
+console.log(req.body)
+res.status(200).send({status:'recieved'})
+
+
+
+})  
 
 
 //sends customer frontend data to DB
@@ -53,8 +69,11 @@ function sendToDB(data){
    MongoClient.connect(url, function (err, db) {
       if(err) throw err
       var dbo = db.db("tickets")
-      dbo.collection('Blockchain').insertOne({userName: data.userName,
-          password: data.password},function(err, result) {
+      dbo.collection('Blockchain').insertOne({
+        userName: data.userName,
+        password: data.password,
+        nft:[]
+        },function(err, result) {
               
           });
   })  }
