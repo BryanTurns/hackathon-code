@@ -4,7 +4,7 @@ const Home = () => {
     <div>
       <div className=" bg-white h-screen text-white relative">
         <p className="bg-gradient-to-r from-black h-full w-full inline-block absolute top-30 opacity-40"></p>
-        <p className="bg-gradient-to-l from-black  h-full inline-block absolute top-30 opacity-40"></p>
+        <p className="bg-gradient-to-l from-black  h-full w-full inline-block absolute top-30 opacity-40"></p>
         <h1 className="text-8xl text-gray-100  text-center p-10 font-medium absolute bottom-20">
           A more secure way to ticket
         </h1>
