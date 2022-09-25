@@ -8,7 +8,7 @@ function App() {
         <Link to="/join">Join</Link>
         <Link to="/" className="float-left">Blockchain Ticket Market</Link>
         <Link className="px-10" to="/buy">
-          <button classname='rounded-full border-black'>Buy</button>
+          <button className='rounded-full border-black'>Buy</button>
           </Link>
         <Link to="/sell">Sell</Link>
       </nav>

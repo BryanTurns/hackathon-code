@@ -15,14 +15,39 @@ const Join=()=>{
         setFormData(() => ({
             ...formData,
             [name]: value
-        }))
-        
-        
+         }))
     }
+
+        async function postInfoToBack(e){
+            console.log("posted to back")
+            console.log(formData)
+            e.preventDefault()
+
+             const res = await fetch("http://localhost:9000/api/users",
+            {
+                method: 'POST',
+                headers: {
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify(formData)
+            }) 
+            
+
+             /* fetch("http://localhost:9000/sendToBack",
+            {
+                method: 'POST',
+                headers: { "Content-Type":'application/json'},
+                body: JSON.stringify(formData)
+            }).then(console.log('done')) */
+        }
+        
+        
+        
+    
 
     return(
         <div>
-            <form>
+            <form onSubmit={postInfoToBack}>
                 <label>Username 
                 <input
                     className='inputs'             
