@@ -22,6 +22,8 @@ export default function Ticket(props) {
         },
         body: JSON.stringify(obj2)}
 )};
+
+
     
 
 

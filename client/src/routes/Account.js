@@ -26,6 +26,7 @@ const Account = () => {
 
   return (
     <div>
+      <h1>{data.userName}'s Account</h1>
       <img src={data.imgSrc}/>
      Info: {data.title}
      <br/>
