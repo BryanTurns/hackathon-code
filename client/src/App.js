@@ -27,7 +27,7 @@ function App() {
             className="h-full inline-block pt-5 px-10 hover:bg-gray-600 transition ease-out duration-250"
             to="/buy"
           >
-            <button classname="rounded-full border-black">Buy</button>
+            <button className="rounded-full border-black">Buy</button>
           </Link>
           <Link
             to="/sell"

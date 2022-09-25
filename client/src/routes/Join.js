@@ -40,12 +40,15 @@ const Join = () => {
 
   return (
     <div className="bg-[#46464D]">
-      <form className="mx-auto w-min text-3xl h-screen  w-8/12 text-center">
+      <form
+        onSubmit={postInfoToBack}
+        className="mx-auto w-min text-3xl h-screen  w-8/12 text-center"
+      >
         <h1 className="text-6xl font-md py-10">Join NFTickets</h1>
         <div className="py-3 inline-block px-10">
           <label className="mx-auto block pb-2">Username</label>
           <input
-            className="inputs block mx-auto"
+            className="inputs block mx-auto text-black"
             onChange={handleEvent}
             name="userName"
             id="userName"
@@ -54,11 +57,11 @@ const Join = () => {
         </div>
 
         <div className="py-3 inline-block px-10">
-          <label className="mx-auto block pb-2">Password:</label>
+          <label className="mx-auto block pb-2 ">Password:</label>
 
           <input
             type="password"
-            className="inputs block mx-auto "
+            className="inputs block mx-auto text-black"
             onChange={handleEvent}
             name="password"
             id="password"
