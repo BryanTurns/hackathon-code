@@ -35,6 +35,12 @@ function App() {
           >
             Sell
           </Link>
+          <Link
+            to="/about"
+            className="h-full inline-block pt-5 px-10 hover:bg-gray-600 transition ease-out duration-250"
+          >
+            About
+          </Link>
         </nav>
         <Outlet />
       </div>

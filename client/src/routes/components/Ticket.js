@@ -10,7 +10,7 @@ export default function Ticket(props) {
       <h1>{props.price}</h1>
       <h1>{props.description}</h1>
       {/* replace props.title with nft ID  */}
-      <button className="border-black bg-gray-200 my-3 inline-block rounded-lg p-3 text-3xl border-2 border-solid  text-black  hover:text-white hover:bg-gray-600 transition ease-out duration-300">
+      <button className="border-black bg-gray-200 my-3 inline-block rounded-lg p-3 text-3xl border-2 border-solid  text-black  hover:text-white hover:bg-gray-600 transition ease-out duration-300 onclick:text-blue">
         Purchase
       </button>
     </div>
