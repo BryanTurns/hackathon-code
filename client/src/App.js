@@ -17,12 +17,7 @@ function App() {
           >
             Blockchain Ticket Market
           </Link>
-          <Link
-            to="/join"
-            className="h-full inline-block pt-5 px-10 hover:bg-gray-600 transition ease-out duration-250"
-          >
-            Join
-          </Link>
+
           <Link
             className="h-full inline-block pt-5 px-10 hover:bg-gray-600 transition ease-out duration-250"
             to="/buy"
@@ -34,6 +29,12 @@ function App() {
             className="h-full inline-block pt-5 px-10 hover:bg-gray-600 transition ease-out duration-250"
           >
             Sell
+          </Link>
+          <Link
+            to="/join"
+            className="h-full inline-block pt-5 px-10 hover:bg-gray-600 transition ease-out duration-250"
+          >
+            Join
           </Link>
         </nav>
         <Outlet />

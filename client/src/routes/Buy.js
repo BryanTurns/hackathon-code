@@ -1,5 +1,7 @@
 import Ticket from "./components/Ticket";
 import React, { useState } from "react";
+import Search from "./components/Search";
+
 export default function Buy() {
   //get data from backend with info about each ticket
 
@@ -37,6 +39,7 @@ export default function Buy() {
 
   return (
     <div className="justify-center bg-gray-800">
+      <Search />
       {data.map((ticket) => (
         <Ticket
           imgSrc={ticket.imgSrc}
