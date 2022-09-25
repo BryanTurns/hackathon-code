@@ -17,7 +17,12 @@ function App() {
           >
             Blockchain Ticket Market
           </Link>
-
+          <Link
+            to="/join"
+            className="h-full inline-block pt-5 px-10 hover:bg-gray-600 transition ease-out duration-250"
+          >
+            Join
+          </Link>
           <Link
             className="h-full inline-block pt-5 px-10 hover:bg-gray-600 transition ease-out duration-250"
             to="/buy"
@@ -30,12 +35,6 @@ function App() {
           >
             Sell
           </Link>
-          <Link
-            to="/join"
-            className="h-full inline-block pt-5 px-10 hover:bg-gray-600 transition ease-out duration-250"
-          >
-            Join
-          </Link>
         </nav>
         <Outlet />
       </div>
@@ -43,32 +42,22 @@ function App() {
         <div class="sm:flex sm:items-center sm:justify-between">
           <Link
             to="/"
-            className=" rounded inline-block pl-2 pr-2 pt-3 pb-3 hover:bg-gray-600 transition ease-out duration-250"
+            className=" rounded-xl inline-block pl-2 pr-2 pt-3 pb-3 hover:bg-gray-600 transition ease-out duration-250"
           >
             <div className=" text-white text-center mx-auto  w-8/12">
               <GiTicket className="inline-block mx-1 mb-7 " size={30} />
-              <h1 className="h-full text-xl text-center inline-block ">
-                NFTickets
-              </h1>
+              <h1 className="text-xl text-center inline-block ">NFTickets</h1>
             </div>
           </Link>
 
           <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about" class="mr-4 hover:underline md:mr-6">
+                About
+              </Link>
             </li>
             <li>
-              <a href="#" class="mr-4 hover:underline md:mr-6">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="#" class="mr-4 hover:underline md:mr-6 ">
-                Licensing
-              </a>
-            </li>
-            <li>
-              <a href="#" class="hover:underline">
+              <a href="#" class="hover:underline md:mr-8">
                 Contact
               </a>
             </li>
@@ -77,10 +66,7 @@ function App() {
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2022{" "}
-          <Link
-            to="/"
-            className="h-full  inline-block hover:bg-gray-600 transition ease-out duration-250"
-          >
+          <Link to="/" className="h-full  inline-block hover:underline">
             NFTickets
           </Link>
         </span>
