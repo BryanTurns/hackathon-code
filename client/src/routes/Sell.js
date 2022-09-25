@@ -1,6 +1,6 @@
 const Sell=()=>{
     return(
-        <div>Sell</div>
+        <div>Selling Coming Soon!</div>
     )
 }
 
