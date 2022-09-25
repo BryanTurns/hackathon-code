@@ -36,7 +36,7 @@ export default function Buy() {
   ]);
 
   return (
-    <div className="flex-row flex-wrap">
+    <div className="flex-row  flex-wrap bg-gray-800">
       {data.map((ticket) => (
         <Ticket
           imgSrc={ticket.imgSrc}
