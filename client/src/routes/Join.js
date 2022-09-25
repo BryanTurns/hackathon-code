@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+const axios = require('axios')
+
 const Join = () => {
   const [formData, setFormData] = useState({
     userName: "",
     password: "",
   });
-  console.log(formData);
+
+  const[user,setUser]=useState()
+
 
   console.log(formData);
 
@@ -16,11 +20,46 @@ const Join = () => {
       [name]: value,
     }));
   }
+  const loggedInUser = localStorage.getItem("userName")
+  const loggedInPass = localStorage.getItem("password")
+  
+ /*  useEffect(() => {
+  if (loggedInUser) {
+    const foundUser = loggedInUser;
+    const foundPass = loggedInPass
+    setUser([{foundUser:{foundUser}, foundPass:{foundPass}}]);
+  }},[]); 
+ */
+/* 
 
-  async function postInfoToBack(e) {
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("userName");
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setUser(foundUser);
+    }
+  }, []); */
+
+  const handleSubmit = async (e)=> {
+    e.preventDefault()
+    
+    localStorage.setItem("isLoggedIn", true)
+    localStorage.setItem("userName", formData.userName)
+    localStorage.setItem("password", formData.password)
+
+
+
+
+    postInfoToBack()
+
+
+  }
+
+
+  async function postInfoToBack() {
     console.log("posted to back");
     console.log(formData);
-    e.preventDefault();
+
 
     const res = await fetch("http://localhost:9000/api/users", {
       method: "POST",
@@ -38,10 +77,23 @@ const Join = () => {
             }).then(console.log('done')) */
   }
 
+
+window.addEventListener("beforeunload", function (){
+    localStorage.clear()
+})
+
+// if there's a user show the message below
+console.log('user')
+console.log(user)
+if (user) {
+   
+    return <div>{formData.userName} is loggged in</div>;
+  }
+
   return (
     <div className="bg-[#46464D]">
       <form
-        onSubmit={postInfoToBack}
+        onSubmit={handleSubmit}
         className="mx-auto w-min text-3xl h-screen  w-8/12 text-center"
       >
         <h1 className="text-6xl font-md py-10">Join NFTickets</h1>
