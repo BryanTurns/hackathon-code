@@ -17,8 +17,8 @@ app.use(express.json());
 
   //get data from customer Frontend -> backend
 router.post('/', (req,res) => {
-    console.log('on ticket backend')
-  console.log(req.body)
+    //console.log('on ticket backend')
+//   /console.log(req.body)
   addNFT(req.body)
   res.status(200).send({status:'recieved'})
   })  
@@ -37,7 +37,7 @@ router.post('/', (req,res) => {
         if(err){
             throw err
         }else{
-        console.log(result)
+        //console.log(result)
         completeDB=result
   
   
@@ -46,12 +46,57 @@ router.post('/', (req,res) => {
   })
   }) 
 
+  //send backend to front end
+  MongoClient.connect(url, function (err, db) {
+    if(err) throw err
+    var dbo = db.db("tickets")
+    dbo.collection('concerts').find({}).toArray(function(err, result){
+        if(err){
+            throw err
+        }else{
+        console.log(result)
+        const data=result
+
+        router.get('/getData', (request, response)=>{
+            response.json(data)
+        })
+
+        //sendToFront(result)        
+        
+        /* for(var i = 0;i < result.length;i++){
+            fillClass[i]
+        } */
+    }
+    db.close()
+})
+  })
+  /* app.get('/getData', (request, response)=>{
+    //console.log('working')
+    MongoClient.connect(url, function (err, db) {
+        if(err) throw err
+        var dbo = db.db("tickets")
+        dbo.collection('concerts').find({}).toArray(function(err, result){
+            if(err){
+                throw err
+            }else{
+            console.log(result)
+            response.json(result)
+            //sendToFront(result)        
+            
+            
+        }
+        db.close()
+    })
+    })
+ }) */
+ 
+
   //add nft to user
   function addNFT(concert){
 
-    console.log("concert")
-    console.log(concert)
-    console.log(concert.userName)
+    //console.log("concert")
+    //console.log(concert)
+    //console.log(concert.userName)
   MongoClient.connect(url, function (err, db) {
     if(err) throw err
     var dbo = db.db("tickets")

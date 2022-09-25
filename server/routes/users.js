@@ -24,7 +24,7 @@ MongoClient.connect(url, function (err, db) {
       if(err){
           throw err
       }else{
-      console.log(result)
+      //console.log(result)
       completeDB=result
 
 
@@ -38,7 +38,7 @@ MongoClient.connect(url, function (err, db) {
 //get data from customer Frontend -> backend
 router.post('/', (req,res) => {
   console.log('on backend')
-console.log(req.body)
+//console.log(req.body)
 res.status(200).send({status:'recieved'})
 sendToDB(req.body)
 
@@ -50,7 +50,7 @@ sendToDB(req.body)
 //sends customer frontend data to DB
 function sendToDB(data){
   console.log('arhumaskdjn')
-  console.log(data)
+  //console.log(data)
   const sleep = (ms)=>{
   return new  Promise((resolve)=> setTimeout(resolve, ms))
   }
